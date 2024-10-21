@@ -62,12 +62,12 @@ public class StructFunction extends Structure {
 	public static final Priority PRIORITY = new Priority(400);
 
 	private static final Pattern SIGNATURE_PATTERN =
-			Pattern.compile("^(?:local )?function (" + Functions.functionNamePattern + ")\\((.*?)\\)(?:\\s*(?:::| returns )\\s*(.+))?$");
+			Pattern.compile("^(?:local )?грамота (" + Functions.functionNamePattern + ")\\((.*?)\\)(?:\\s*(?:::| returns )\\s*(.+))?$");
 	private static final AtomicBoolean VALIDATE_FUNCTIONS = new AtomicBoolean();
 
 	static {
 		Skript.registerStructure(StructFunction.class,
-			"[:local] function <.+>"
+			"[:local] грамота <.+>"
 		);
 	}
 
@@ -99,7 +99,7 @@ public class StructFunction extends Structure {
 		}
 
 		// parse signature
-		getParser().setCurrentEvent((local ? "local " : "") + "function", FunctionEvent.class);
+		getParser().setCurrentEvent((local ? "local " : "") + "грамота", FunctionEvent.class);
 		signature = Functions.parseSignature(
 			getParser().getCurrentScript().getConfig().getFileName(),
 			matcher.group(1), matcher.group(2), matcher.group(3), local
@@ -113,7 +113,7 @@ public class StructFunction extends Structure {
 	@Override
 	public boolean load() {
 		ParserInstance parser = getParser();
-		parser.setCurrentEvent((local ? "local " : "") + "function", FunctionEvent.class);
+		parser.setCurrentEvent((local ? "local " : "") + "грамота", FunctionEvent.class);
 
 		assert signature != null;
 		// noinspection ConstantConditions - entry container cannot be null as this structure is not simple
