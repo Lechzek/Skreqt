@@ -104,7 +104,7 @@ public abstract class PropertyCondition<T> extends Condition implements Checker<
 
 	public static void register(Class<? extends Condition> condition, PropertyType propertyType, String property, String type) {
 		if (type.contains("%"))
-			throw new SkriptAPIException("The type argument must not contain any '%'s");
+			throw new SkriptAPIException("Ты начудил дурень '%'s");
 
 		switch (propertyType) {
 			case BE:
