@@ -47,7 +47,7 @@ public class StructAliases extends Structure {
 	public static final Priority PRIORITY = new Priority(200);
 
 	static {
-		Skript.registerStructure(StructAliases.class, "aliases");
+		Skript.registerStructure(StructAliases.class, "погоняло");
 	}
 
 	@Override
