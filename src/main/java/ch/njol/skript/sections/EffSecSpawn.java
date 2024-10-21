@@ -84,8 +84,8 @@ public class EffSecSpawn extends EffectSection {
 
 	static {
 		Skript.registerSection(EffSecSpawn.class,
-			"(spawn|summon) %entitytypes% [%directions% %locations%]",
-			"(spawn|summon) %number% of %entitytypes% [%directions% %locations%]"
+			"(воссоздай|зов) %entitytypes% [%directions% %locations%]",
+			"(воссоздай|зов) %number% %entitytypes% [%directions% %locations%]"
 		);
 		EventValues.registerEventValue(SpawnEvent.class, Entity.class, new Getter<Entity, SpawnEvent>() {
 			@Override
@@ -125,7 +125,7 @@ public class EffSecSpawn extends EffectSection {
 		if (sectionNode != null) {
 			AtomicBoolean delayed = new AtomicBoolean(false);
 			Runnable afterLoading = () -> delayed.set(!getParser().getHasDelayBefore().isFalse());
-			trigger = loadCode(sectionNode, "spawn", afterLoading, SpawnEvent.class);
+			trigger = loadCode(sectionNode, "воссоздай", afterLoading, SpawnEvent.class);
 			if (delayed.get()) {
 				Skript.error("Delays can't be used within a Spawn Effect Section");
 				return false;
