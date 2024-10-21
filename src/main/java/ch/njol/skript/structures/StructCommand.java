@@ -86,7 +86,7 @@ public class StructCommand extends Structure {
 
 	public static final Priority PRIORITY = new Priority(500);
 
-	private static final Pattern COMMAND_PATTERN = Pattern.compile("(?i)^command\\s+/?(\\S+)\\s*(\\s+(.+))?$");
+	private static final Pattern COMMAND_PATTERN = Pattern.compile("(?i)^указ\\s+/?(\\S+)\\s*(\\s+(.+))?$");
 	private static final Pattern ARGUMENT_PATTERN = Pattern.compile("<\\s*(?:([^>]+?)\\s*:\\s*)?(.+?)\\s*(?:=\\s*(" + SkriptParser.WILDCARD + "))?\\s*>");
 	private static final Pattern DESCRIPTION_PATTERN = Pattern.compile("(?<!\\\\)%-?(.+?)%");
 
@@ -96,12 +96,12 @@ public class StructCommand extends Structure {
 		Skript.registerStructure(
 			StructCommand.class,
 			EntryValidator.builder()
-				.addEntryData(new VariableStringEntryData("usage", null, true))
-				.addEntry("description", "", true)
-				.addEntry("prefix", null, true)
-				.addEntry("permission", "", true)
-				.addEntryData(new VariableStringEntryData("permission message", null, true))
-				.addEntryData(new KeyValueEntryData<List<String>>("aliases", new ArrayList<>(), true) {
+				.addEntryData(new VariableStringEntryData("пользование", null, true))
+				.addEntry("описание", "", true)
+				.addEntry("препись", null, true)
+				.addEntry("права", "", true)
+				.addEntryData(new VariableStringEntryData("мнение авторитета", null, true))
+				.addEntryData(new KeyValueEntryData<List<String>>("погоняло", new ArrayList<>(), true) {
 					private final Pattern pattern = Pattern.compile("\\s*,\\s*/?");
 
 					@Override
@@ -134,10 +134,10 @@ public class StructCommand extends Structure {
 						return executableBy;
 					}
 				})
-				.addEntryData(new LiteralEntryData<>("cooldown", null, true, Timespan.class))
-				.addEntryData(new VariableStringEntryData("cooldown message", null, true))
+				.addEntryData(new LiteralEntryData<>("ожидание", null, true, Timespan.class))
+				.addEntryData(new VariableStringEntryData("жду", null, true))
 				.addEntry("cooldown bypass", null, true)
-				.addEntryData(new VariableStringEntryData("cooldown storage", null, true, StringMode.VARIABLE_NAME))
+				.addEntryData(new VariableStringEntryData("мозг", null, true, StringMode.VARIABLE_NAME))
 				.addSection("trigger", false)
 				.unexpectedEntryMessage(key ->
 					"Unexpected entry '" + key + "'. Check that it's spelled correctly, and ensure that you have put all code into a trigger."
