@@ -76,13 +76,13 @@ public class SecConditional extends Section {
 
 	private static final SkriptPattern THEN_PATTERN = PatternCompiler.compile("then [run]");
 	private static final Patterns<ConditionalType> CONDITIONAL_PATTERNS = new Patterns<>(new Object[][] {
-		{"else", ConditionalType.ELSE},
-		{"else [:parse] if <.+>", ConditionalType.ELSE_IF},
-		{"else [:parse] if (:any|any:at least one [of])", ConditionalType.ELSE_IF},
-		{"else [:parse] if [all]", ConditionalType.ELSE_IF},
-		{"[:parse] if (:any|any:at least one [of])", ConditionalType.IF},
-		{"[:parse] if [all]", ConditionalType.IF},
-		{"[:parse] if <.+>", ConditionalType.IF},
+		{"иначе", ConditionalType.ELSE},
+		{"иначе [:parse] коли <.+>", ConditionalType.ELSE_IF},
+		{"иначе [:parse] коли (:any|any:at least one [of])", ConditionalType.ELSE_IF},
+		{"иначе [:parse] коли [all]", ConditionalType.ELSE_IF},
+		{"[:parse] коли (:any|any:at least one [of])", ConditionalType.IF},
+		{"[:parse] коли [all]", ConditionalType.IF},
+		{"[:parse] коли <.+>", ConditionalType.IF},
 		{THEN_PATTERN.toString(), ConditionalType.THEN},
 		{"implicit:<.+>", ConditionalType.IF}
 	});
