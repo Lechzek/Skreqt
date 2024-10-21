@@ -83,7 +83,7 @@ import java.util.WeakHashMap;
 public class SecLoop extends LoopSection {
 
 	static {
-		Skript.registerSection(SecLoop.class, "loop %objects%");
+		Skript.registerSection(SecLoop.class, "доведай %objects%");
 	}
 
 	@SuppressWarnings("NotNullFieldNotInitialized")
