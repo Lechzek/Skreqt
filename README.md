@@ -1,4 +1,4 @@
-![Skript Language](.github/assets/skreqt.png)
+![Skript Language](.github/assets/skreqt.jpg)
 
 ---
 
