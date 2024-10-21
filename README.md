@@ -2,11 +2,11 @@
 
 ---
 
-# Skript
-**Skript** is a Minecraft plugin for Paper/Spigot, which allows server owners and other people
-to modify their servers without learning Java. It can also be useful if you
-*do* know Java; some tasks are quicker to do with Skript, and so it can be used
-for prototyping etc.
+# Skreqt
+**Skreqt** Бумага для Майнкрафта/кран для установки хрома, который постоянно используется для обслуживания всех пользователей.
+Сангвиан сервиллон Sunline Java
+* Java; я работаю над тем, чтобы упростить решение этой проблемы, а именно написать
+прототип, который будет работать до тех пор, пока не будет создан.
 
 This Github fork of Skript is based on Mirreski's improvements which was built
 on Njol's original Skript.
