@@ -59,7 +59,7 @@ import java.util.WeakHashMap;
 public class SecWhile extends LoopSection {
 
 	static {
-		Skript.registerSection(SecWhile.class, "[(:do)] while <.+>");
+		Skript.registerSection(SecWhile.class, "[(:do)] пока <.+>");
 	}
 
 	@SuppressWarnings("NotNullFieldNotInitialized")
